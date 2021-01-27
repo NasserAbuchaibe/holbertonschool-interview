@@ -2,8 +2,13 @@
 
 
 def canUnlockAll(boxes):
-    for i in range(len(boxes)):
-        for x in range(1, len(boxes[i])):
-            if len(boxes[boxes[i][x]]) == 0 and len(boxes) != i:
+    """ method that determines if all the boxes can be opened. """
+    len_boxes = len(boxes)
+    if len_boxes == 0:
+        return True
+    for i in range(len_boxes):
+        len_box = len(boxes[i])
+        for x in range(1, len_box):
+            if len(boxes[boxes[i][x]]) == 0 and len_boxes != i:
                 return False
     return True
