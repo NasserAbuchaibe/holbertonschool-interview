@@ -9,13 +9,13 @@ def canUnlockAll(boxes):
     """ Write a method that determines if all the boxes can be opened
     """
     array = [0]
-    if (len(boxes) == 0):
+    len_boxes = len(boxes)
+    if (len_boxes == 0):
         return True
     for key in array:
         for key_box in boxes[key]:
-            if key_box not in array:
-                if key_box < len(boxes):
-                    array.append(key_box)
-    if len(array) == len(boxes):
+            if key_box not in array and key_box < len_boxes:
+                array.append(key_box)
+    if len(array) == len_boxes:
         return True
     return False
