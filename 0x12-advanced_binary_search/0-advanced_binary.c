@@ -8,14 +8,14 @@
  */
 void print_array(int *array, int begin, int end)
 {
-	int i;
+	int x;
 
 	printf("Searching in array: ");
 	for (x = begin; x <= end; x++)
 	{
-		if (x != begin)
+		if (i != begin)
 			printf(", ");
-		printf("%d", array[x]);
+		printf("%d", array[i]);
 	}
 	printf("\n");
 }
@@ -28,23 +28,23 @@ void print_array(int *array, int begin, int end)
  * @value: value to be searched
  * Return: index of value or -1
  */
-int binary_search_recu(int *array, int begin, int end, int value)
+int recursive_binary_search(int *array, int begin, int end, int value)
 {
 	if (end >= begin)
 	{
-		int m = begin + (end - begin) / 2;
+		int middle = begin + (end - begin) / 2;
 
 		print_array(array, begin, end);
-		if (array[m] == value)
+		if (array[middle] == value)
 		{
-			if (array[m - 1] == value)
-				return (binary_search_recu(array, begin, m, value));
+			if (array[middle - 1] == value)
+				return (recursive_binary_search(array, begin, middle, value));
 
-			return (m);
+			return (middle);
 		}
-		if (array[m] >= value)
-			return (binary_search_recu(array, begin, m, value));
-		return (binary_search_recu(array, m + 1, end, value));
+		if (array[middle] >= value)
+			return (recursive_binary_search(array, begin, middle, value));
+		return (recursive_binary_search(array, middle + 1, end, value));
 	}
 	return (-1);
 }
