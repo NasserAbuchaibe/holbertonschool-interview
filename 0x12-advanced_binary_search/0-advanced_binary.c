@@ -13,9 +13,9 @@ void print_array(int *array, int begin, int end)
 	printf("Searching in array: ");
 	for (x = begin; x <= end; x++)
 	{
-		if (i != begin)
+		if (x != begin)
 			printf(", ");
-		printf("%d", array[i]);
+		printf("%d", array[x]);
 	}
 	printf("\n");
 }
