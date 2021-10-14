@@ -49,7 +49,7 @@ if __name__ == "__main__":
     try:
         number = int(sys.argv[1])
     except:
-        print("N must be a numberber\n")
+        print("N must be a number\n")
         exit(1)
     if number < 4:
         print("N must be at least 4\n")
