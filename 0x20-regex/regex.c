@@ -8,7 +8,7 @@
 */
 int regex_match(char const *str, char const *pattern)
 {
-    int ast = 0;
+	int ast = 0;
 	int dot = 0;
 
 	if (!str || !pattern)
